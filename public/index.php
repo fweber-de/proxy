@@ -45,7 +45,7 @@ $response = $http->request($request->getMethod(), $host->target.$targetUri, [
 ]);
 
 foreach ($response->getHeaders() as $key => $header) {
-    header($key.': '.$header);
+    header($key.': '.$header[0]);
 }
 
 echo $response->getContent();
