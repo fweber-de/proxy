@@ -42,6 +42,8 @@ $headers['host'] = $targetHost;
 $response = $http->request($request->getMethod(), $host->target.$targetUri, [
     'headers' => $headers,
     'body' => $request->getContent(),
+    'verify_host' => false,
+    'verify_peer' => false,
 ]);
 
 foreach ($response->getHeaders() as $key => $header) {
